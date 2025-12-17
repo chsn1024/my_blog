@@ -212,7 +212,7 @@ def load_posts():
 
 
 # ⭐ 全局加载文章元数据，但这次 views 字段将包含文件中的持久化数据
-POSTS = load_posts()
+# posts = load_posts()
 
 
 # --- 路由逻辑 ---
@@ -221,13 +221,14 @@ POSTS = load_posts()
 def index():
     posts = load_posts()
     """显示博客列表页。"""
-    return render_template("index.html", posts=POSTS)
+    return render_template("index.html", posts=posts)
 
 
 @app.route("/post/<int:post_id>")
 def post_detail(post_id):
     """显示单篇博客文章详情页，并更新浏览量。"""
-    post = next((p for p in POSTS if p["id"] == post_id), None)
+    posts = load_posts()
+    post = next((p for p in posts if p["id"] == post_id), None)
     post_id_str = str(post_id)
 
     if post is None:
