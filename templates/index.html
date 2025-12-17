@@ -1,0 +1,125 @@
+<!-- <!DOCTYPE html>
+<html lang="zh">
+
+<head>
+    <meta charset="UTF-8">
+    <title>我的博客</title>
+</head>
+
+<body>
+    <h1>我的第一篇博客</h1>
+    <p>如果你看到这行字，说明博客已经跑起来了。</p>
+</body>
+
+</html> -->
+
+<!-- <!DOCTYPE html>
+<html lang="zh">
+
+<head>
+    <meta charset="UTF-8">
+    <title>我的博客</title>
+</head>
+
+<body>
+    <h1>我的博客</h1>
+    {% for post in posts %}
+    <hr>
+     这段被改<h2>{{ post.title }}</h2> 
+     <h2>
+    <a href="/post/{{ post.id }}">{{ post.title }}</a>
+</h2>
+    <small>{{ post.date }}</small>
+    <p>{{ post.content }}</p>
+    {% endfor %}
+
+</body>
+
+</html> -->
+
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+    <meta charset="UTF-8">
+    <title>我的博客首页</title>
+    <link rel="shortcut icon" href="../static/bitbug_favicon.ico" />
+    <style>
+        body {
+            font-family: sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        h1 {
+            border-bottom: 2px solid #eee;
+            padding-bottom: 10px;
+        }
+
+        .post-card {
+            margin-bottom: 30px;
+            padding: 15px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+
+        .post-card h2 {
+            margin-top: 0;
+        }
+
+        .post-card small {
+            color: #888;
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        body {
+            font-family: sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        h1 {
+            border-bottom: 2px solid #eee;
+            padding-bottom: 10px;
+        }
+
+        .post-card {
+            margin-bottom: 30px;
+            padding: 15px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+
+        .post-card h2 {
+            margin-top: 0;
+        }
+
+        .post-card small {
+            color: #888;
+            display: block;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>📚 博客文章列表</h1>
+
+    {% for post in posts %}
+    <div class="post-card">
+        <h2>
+            <a href="/post/{{ post.id }}">{{ post.title }}</a>
+        </h2>
+        <small>发布日期: {{ post.date }} · 阅读 {{ post.views }}</small>
+
+    </div>
+    {% else %}
+    <p>抱歉，目前还没有任何博客文章。</p>
+    {% endfor %}
+
+</body>
+
+</html>

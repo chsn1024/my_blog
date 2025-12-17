@@ -1,0 +1,95 @@
+<!-- <!DOCTYPE html>
+<html lang="zh">
+
+<head>
+    <meta charset="UTF-8">
+    <title>{{ post.title }}</title>
+</head>
+
+<body>
+    <a href="/">← 返回首页</a>
+
+    <h1>{{ post.title }}</h1>
+    <small>{{ post.date }}</small>
+
+    这段被改<p>{{ post.content }}</p> 
+    <div>
+        {{ content | safe }}
+    </div>
+</body>
+
+</html> -->
+
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+    <meta charset="UTF-8">
+    <title>{{ post.title }} - 我的博客</title>
+    <link rel="shortcut icon" href="../static/bitbug_favicon.ico" />
+    <style>
+        .back-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            padding: 6px 14px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            background: #fafafa;
+            color: #333;
+            text-decoration: none;
+            font-size: 14px;
+            transition: .2s;
+        }
+
+        .back-btn:hover {
+            background: #eee;
+            border-color: #888;
+        }
+
+        body {
+            font-family: sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            line-height: 1.6;
+        }
+
+        h1 {
+            border-bottom: 2px solid #eee;
+            padding-bottom: 10px;
+            margin-bottom: 5px;
+        }
+
+        small {
+            color: #888;
+            display: block;
+            margin-bottom: 20px;
+        }
+
+        /* 增加代码块的样式，使 fenced_code 扩展的效果更明显 */
+        pre {
+            background-color: #f4f4f4;
+            padding: 15px;
+            border-radius: 5px;
+            overflow-x: auto;
+        }
+
+        code {
+            font-family: monospace;
+        }
+    </style>
+</head>
+
+<body>
+    <p><a class="back-btn" href="/">← 返回文章列表</a></p>
+
+    <h1>{{ post.title }}</h1>
+    <small>发布日期: {{ post.date }} · 阅读 {{ post.views }}</small>
+
+    <article>
+        {{ content | safe }}
+    </article>
+</body>
+
+</html>
